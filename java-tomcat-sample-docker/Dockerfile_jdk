@@ -1,0 +1,6 @@
+FROM adoptopenjdk/openjdk8
+RUN mkdir /opt/app
+WORKDIR /opt/app
+COPY target/dependency/*.jar /opt/app
+COPY target/*.war  /opt/app
+CMD java -jar webapp-runner.jar java-tomcat-maven-example.war
